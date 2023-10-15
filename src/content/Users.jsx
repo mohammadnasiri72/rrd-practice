@@ -18,7 +18,6 @@ export default function Users(){
         
 
     const url = useParams()
-
     return(
         <>
         <div className="d-flex flex-column align-items-center border">

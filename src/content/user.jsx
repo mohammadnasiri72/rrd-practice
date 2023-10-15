@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 export default function User() {
+    const mybColor = useSelector((store)=> store.textColor.bColor )
     const [users, setUsers] = useState([])
     const [page, setPage] = useState("1")
     const [numpage, setNumpage] = useState("5")
@@ -17,7 +19,7 @@ export default function User() {
 
     return (
         <>
-            <div className='d-flex flex-column border m-2 w-100'>
+            <div style={{border: `${mybColor} 2px solid`}} className='d-flex flex-column m-2 w-100'>
                 <div className='container d-block'>
                     <div className="row justify-content-around border-bottom">
                         <div className="col-9">
@@ -57,7 +59,6 @@ export default function User() {
                     <div className="row">
                         {
                             users.map((e) => (
-
                                 <div key={e.id} className="col-lg-3 col-md-4 col-sm-6 col-12">
                                     <div className="card">
                                         <Link to={`/User/${e.fname}`}>

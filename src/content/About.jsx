@@ -1,9 +1,11 @@
+import { useSelector } from "react-redux"
 
 export default function About() {
-    return (
+    const mybColor = useSelector((store)=> store.textColor.bColor )
 
-        <div className="w-75 border m-2 test2">
-            <h1>About page</h1>
+    return (
+        <div style={{border: `${mybColor} 2px solid`}} className="w-75 m-2 test2">
+            <h1>About page </h1>
             <p>this is about page</p>
         </div>
 
